@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>801148721359-r4r2v3cq0de37cigsf9o1go7aj3m4ugl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.801148721359-r4r2v3cq0de37cigsf9o1go7aj3m4ugl</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>801148721359-8u33ibdq5kl67pem128msua14h0a04d4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC8vykFceMeF3Y0aaWvNY4b4XwM5MQWOFg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>801148721359</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.somacProjectFlutter</string>
+	<key>PROJECT_ID</key>
+	<string>getiproject-naranggeti</string>
+	<key>STORAGE_BUCKET</key>
+	<string>getiproject-naranggeti.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:801148721359:ios:28d49b9fe6efc480f4bfba</string>
+	<key>DATABASE_URL</key>
+	<string>https://getiproject-naranggeti-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
