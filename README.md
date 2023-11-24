@@ -1,7 +1,11 @@
-# somac_project_flutter
+# 소맥 프로젝트
 
+### CNN-MobileNet을 활용한 중고 전자 제품 등급 분류 서비스와 IMEI 인식 서비스-ios앱 개발  
 ##### 5팀: 황인선, 이수빈, 민형준, 여효진, 김영규, 문세희  
-첫 flutter 프로젝트 떨린다...
+
+---  
+첫 flutter 프로젝트 떨린다...  
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
