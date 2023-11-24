@@ -6,7 +6,8 @@
 ---  
 첫 flutter 프로젝트 떨린다...  
 ㄴ 꿈을 펼쳐라!
-
+ㄴ 꿈을 펼쳐봐
+ㄴ 하고싶은거 다 해
 ## Getting Started
 
 This project is a starting point for a Flutter application.
