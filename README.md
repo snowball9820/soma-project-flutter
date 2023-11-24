@@ -5,6 +5,7 @@
 
 ---  
 첫 flutter 프로젝트 떨린다...  
+ㄴ 꿈을 펼쳐라!
 
 ## Getting Started
 
