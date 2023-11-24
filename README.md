@@ -1,7 +1,7 @@
 # somac_project_flutter
 
-A new Flutter project.
-
+##### 5팀: 황인선, 이수빈, 민형준, 여효진, 김영규, 문세희  
+첫 flutter 프로젝트 떨린다...
 ## Getting Started
 
 This project is a starting point for a Flutter application.
