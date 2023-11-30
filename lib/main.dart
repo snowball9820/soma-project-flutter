@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-// import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -44,6 +42,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       parent: _animationController,
       curve: Curves.easeInOut,
     ));
+
+    // authStateChanges를 사용하여 사용자 로그인 상태를 감지
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('사용자가 현재 로그아웃 상태입니다!');
+      } else {
+        print('사용자가 로그인되었습니다!');
+        // 로그인 상태가 변경될 때마다 이 부분에서 원하는 동작을 수행할 수 있습니다.
+        // 예를 들어, 로그인 상태가 변경되면 다른 화면으로 이동하거나 특정 작업을 수행할 수 있습니다.
+      }
+    });
 
     _animationController.forward();
   }
@@ -104,6 +113,57 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 }
 
+class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('환영합니다!'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Hello World!',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.popUntil(context, (route) => route.isFirst);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ThirdScreen()), // ThirdScreen으로 이동
+                );
+              },
+              child: Text('세 번째 화면으로 이동'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('세 번째 화면'),
+      ),
+      body: Center(
+        child: Text(
+          '세 번째 화면입니다.',
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+    );
+  }
+}
+
 class LoginScreen extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -141,12 +201,21 @@ class LoginScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 try {
-                  UserCredential userCredential = //구글 auth
+                  UserCredential userCredential =
                       await FirebaseAuth.instance.signInWithEmailAndPassword(
                     email: usernameController.text,
                     password: passwordController.text,
                   );
                   print('로그인 성공: ${userCredential.user?.email}');
+
+                  // 첫 번째 화면에 도달할 때까지 스택에서 모든 화면을 팝합니다.
+                  Navigator.popUntil(context, (route) => route.isFirst);
+
+                  // 현재 화면을 WelcomeScreen으로 바꿉니다.
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                  );
                 } catch (e) {
                   print('로그인 실패: $e');
                 }
@@ -168,7 +237,6 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // auth 회원가입
         title: Text('회원가입'),
       ),
       body: Padding(
